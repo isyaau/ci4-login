@@ -61,7 +61,7 @@ abstract class BaseController extends Controller
         $this->databayarModel = new \App\Models\DataBayarModel();
         $this->dataperjalananModel = new \App\Models\DataPerjalananModel();
         $this->datapesananModel = new \App\Models\DataPesananModel();
-        $this->dataakunModel = new \App\Models\AkunModel();
+        $this->datausersModel = new \App\Models\UsersModel();
         helper('tgl_indo');
     }
 }

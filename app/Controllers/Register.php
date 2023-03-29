@@ -2,8 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\UsersModel;
 use CodeIgniter\Controller;
-use App\Models\AkunModel;
 
 class Register extends Controller
 {
@@ -22,19 +22,31 @@ class Register extends Controller
         //set rules validation form
         $rules = [
             'nama'          => 'required|min_length[3]|max_length[50]',
-            'username'         => 'required|min_length[6]|max_length[50]|is_unique[akun.username]',
+            'no_induk'      => 'required|min_length[3]|max_length[50]',
+            'kelas'         => 'required',
+            'alamat'        => 'required',
+            'no_hp'         => 'required',
+            'email'         => 'required',
+            'username'      => 'required|min_length[6]|max_length[50]|is_unique[tb_users.username]',
+            'role'          => 'required',
             'password'      => 'required|min_length[6]|max_length[200]',
             'confpassword'  => 'matches[password]'
         ];
 
         if ($this->validate($rules)) {
-            $model = new AkunModel();
+            $model = new UsersModel();
             $foto = "default.jpg";
             $data = [
                 'nama'     => $this->request->getVar('nama'),
-                'username'    => $this->request->getVar('username'),
+                'no_induk' => $this->request->getVar('no_induk'),
+                'kelas'    => $this->request->getVar('kelas'),
+                'alamat'   => $this->request->getVar('alamat'),
+                'no_hp'    => $this->request->getVar('no_hp'),
+                'email'    => $this->request->getVar('email'),
+                'role'     => $this->request->getVar('role'),
+                'username' => $this->request->getVar('username'),
                 'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
-                'foto' => $foto
+                'foto'     => $foto
             ];
             $model->save($data);
             return redirect()->to('/');

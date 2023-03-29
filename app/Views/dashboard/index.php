@@ -18,7 +18,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                 Data Mobil</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $mobil; ?> Mobil</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">2 Mobil</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-car fa-2x text-gray-300"></i>
@@ -36,7 +36,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                 Data Pemesan</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $pemesan; ?> Pemesan</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">3 Pemesan</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-user fa-2x text-gray-300"></i>
@@ -56,7 +56,7 @@
                             </div>
                             <div class="row no-gutters align-items-center">
                                 <div class="col-auto">
-                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?= $pesanan; ?> Pesanan</div>
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">4 Pesanan</div>
                                 </div>
                             </div>
                         </div>
@@ -76,7 +76,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                 Data Akun</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $akun; ?> Akun</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">2 Akun</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-users fa-2x text-gray-300"></i>
@@ -146,7 +146,7 @@
                                     );
                                     $split       = explode('-', $tanggal);
 
-                                    $tgl_indo = $split[1] . ' ' . $bulan[(int)$split[2]] . ' ' . $split[0];
+                                    $tgl_indo = $split[0] . ' ' . $bulan[(int)$split[1]] . ' ' . $split[2];
 
                                     if ($cetak_hari) {
                                         $num = date('N', strtotime($tanggal));
@@ -156,7 +156,7 @@
                                 }
                                 ?>
 
-                                <div class="col-8">: <?= tanggal_indo(session()->get('date'), true); ?>. Jam <?= session()->get('time'); ?></div>
+                                <div class="col-8">: <?= tanggal_indo(date('d-m-Y'), true); ?>. Jam <?= session()->get('time'); ?></div>
                             </div>
                         </div>
 

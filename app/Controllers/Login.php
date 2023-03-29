@@ -2,8 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\UsersModel;
 use CodeIgniter\Controller;
-use App\Models\AkunModel;
 
 class Login extends Controller
 {
@@ -16,7 +16,7 @@ class Login extends Controller
     public function auth()
     {
         $session = session();
-        $model = new AkunModel();
+        $model = new UsersModel();
         $username = $this->request->getVar('username');
         $password = $this->request->getVar('password');
         $data = $model->where('username', $username)->first();
@@ -25,12 +25,11 @@ class Login extends Controller
             $verify_pass = password_verify($password, $pass);
             if ($verify_pass) {
                 $ses_data = [
-                    'id_akun'       => $data['id_akun'],
+                    'id_user'       => $data['id_user'],
                     'nama'          => $data['nama'],
                     'username'      => $data['username'],
                     'foto'          => $data['foto'],
-                    'date'          => date("Y-d-m"),
-                    'time'          => date("H:i:s A"),
+                    'role'          => $data['role'],
                     'logged_in'     => TRUE
                 ];
                 $session->set($ses_data);

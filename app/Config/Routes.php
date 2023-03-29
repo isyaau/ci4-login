@@ -32,54 +32,6 @@ $routes->set404Override();
 // $routes->get('/', 'Home::index');
 $routes->get('/dashboard', 'Dashboard::index', ['filter' => 'auth']);
 
-// Data Merk
-$routes->get('/data-merk', 'DataMerk::index', ['filter' => 'auth']);
-$routes->get('/data-merk/edit/(:num)', 'DataMerk::edit/$1', ['filter' => 'auth']);
-$routes->post('/data-merk/save', 'DataMerk::save', ['filter' => 'auth']);
-$routes->post('/data-merk/update', 'DataMerk::update', ['filter' => 'auth']);
-$routes->post('/data-merk/update/(:num)', 'DataMerk::update/$1', ['filter' => 'auth']);
-$routes->delete('/data-merk/(:num)', 'DataMerk::delete/$1', ['filter' => 'auth']);
-
-// Data Mobil
-$routes->get('/data-mobil', 'DataMobil::index', ['filter' => 'auth']);
-$routes->post('/data-mobil/save', 'DataMobil::save', ['filter' => 'auth']);
-$routes->delete('/data-mobil/(:num)', 'DataMobil::delete/$1', ['filter' => 'auth']);
-$routes->get('/data-mobil/edit/(:num)', 'DataMobil::edit/$1', ['filter' => 'auth']);
-$routes->post('/data-mobil/update/(:num)', 'DataMobil::update/$1', ['filter' => 'auth']);
-$routes->get('/data-mobil/detail/(:num)', 'DataMobil::detail/$1', ['filter' => 'auth']);
-
-// Data Pemesan 
-$routes->get('/data-pemesan', 'DataPemesan::index', ['filter' => 'auth']);
-$routes->post('/data-pemesan/save', 'DataPemesan::save', ['filter' => 'auth']);
-$routes->delete('/data-pemesan/(:num)', 'DataPemesan::delete/$1', ['filter' => 'auth']);
-$routes->get('/data-pemesan/edit/(:num)', 'DataPemesan::edit/$1', ['filter' => 'auth']);
-$routes->post('/data-pemesan/update/(:num)', 'DataPemesan::update/$1', ['filter' => 'auth']);
-$routes->get('/data-pemesan/detail/(:num)', 'DataPemesan::detail/$1', ['filter' => 'auth']);
-
-// Jenis Bayar 
-$routes->get('/data-bayar', 'DataBayar::index', ['filter' => 'auth']);
-$routes->post('/data-bayar/save', 'DataBayar::save', ['filter' => 'auth']);
-$routes->delete('/data-bayar/(:num)', 'DataBayar::delete/$1', ['filter' => 'auth']);
-$routes->get('/data-bayar/edit/(:num)', 'DataBayar::edit/$1', ['filter' => 'auth']);
-$routes->post('/data-bayar/update/(:num)', 'DataBayar::update/$1', ['filter' => 'auth']);
-$routes->get('/data-bayar/detail/(:num)', 'DataBayar::detail/$1', ['filter' => 'auth']);
-
-// Data Perjalanan 
-$routes->get('/data-perjalanan', 'DataPerjalanan::index', ['filter' => 'auth']);
-$routes->post('/data-perjalanan/save', 'DataPerjalanan::save', ['filter' => 'auth']);
-$routes->delete('/data-perjalanan/(:num)', 'DataPerjalanan::delete/$1', ['filter' => 'auth']);
-$routes->get('/data-perjalanan/edit/(:num)', 'DataPerjalanan::edit/$1', ['filter' => 'auth']);
-$routes->post('/data-perjalanan/update/(:num)', 'DataPerjalanan::update/$1', ['filter' => 'auth']);
-$routes->get('/data-perjalanan/detail/(:num)', 'DataPerjalanan::detail/$1', ['filter' => 'auth']);
-
-// Data Pesanan 
-$routes->get('/data-pesanan', 'DataPesanan::index', ['filter' => 'auth']);
-$routes->post('/data-pesanan/save', 'DataPesanan::save', ['filter' => 'auth']);
-$routes->delete('/data-pesanan/(:num)', 'DataPesanan::delete/$1', ['filter' => 'auth']);
-$routes->get('/data-pesanan/edit/(:num)', 'DataPesanan::edit/$1', ['filter' => 'auth']);
-$routes->post('/data-pesanan/update/(:num)', 'DataPesanan::update/$1', ['filter' => 'auth']);
-$routes->get('/data-pesanan/detail/(:num)', 'DataPesanan::detail/$1', ['filter' => 'auth']);
-
 // Data Akun 
 $routes->get('/data-akun', 'DataAkun::index', ['filter' => 'auth']);
 $routes->post('/data-akun/save', 'DataAkun::save', ['filter' => 'auth']);
