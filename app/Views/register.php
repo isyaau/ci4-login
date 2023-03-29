@@ -23,11 +23,11 @@
                 <form action="/register/save" method="post">
                     <div class="mb-3">
                         <label for="InputForName" class="form-label">Name</label>
-                        <input type="text" name="name" class="form-control" id="InputForName" value="<?= set_value('name') ?>">
+                        <input type="text" name="nama" class="form-control" id="InputForName" value="<?= set_value('nama') ?>">
                     </div>
                     <div class="mb-3">
-                        <label for="InputForEmail" class="form-label">Email address</label>
-                        <input type="email" name="email" class="form-control" id="InputForEmail" value="<?= set_value('email') ?>">
+                        <label for="InputForEmail" class="form-label">Username</label>
+                        <input type="text" name="username" class="form-control" id="InputForEmail" value="<?= set_value('username') ?>">
                     </div>
                     <div class="mb-3">
                         <label for="InputForPassword" class="form-label">Password</label>

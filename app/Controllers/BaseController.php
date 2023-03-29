@@ -54,5 +54,14 @@ abstract class BaseController extends Controller
         // Preload any models, libraries, etc, here.
 
         // E.g.: $this->session = \Config\Services::session();
+        session();
+        $this->datamerkModel = new \App\Models\DataMerkModel();
+        $this->datamobilModel = new \App\Models\DataMobilModel();
+        $this->datapemesanModel = new \App\Models\DataPemesanModel();
+        $this->databayarModel = new \App\Models\DataBayarModel();
+        $this->dataperjalananModel = new \App\Models\DataPerjalananModel();
+        $this->datapesananModel = new \App\Models\DataPesananModel();
+        $this->dataakunModel = new \App\Models\AkunModel();
+        helper('tgl_indo');
     }
 }

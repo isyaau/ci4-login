@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use CodeIgniter\Controller;
-use App\Models\UserModel;
+use App\Models\AkunModel;
 
 class Login extends Controller
 {
@@ -16,29 +16,32 @@ class Login extends Controller
     public function auth()
     {
         $session = session();
-        $model = new UserModel();
-        $email = $this->request->getVar('email');
+        $model = new AkunModel();
+        $username = $this->request->getVar('username');
         $password = $this->request->getVar('password');
-        $data = $model->where('user_email', $email)->first();
+        $data = $model->where('username', $username)->first();
         if ($data) {
-            $pass = $data['user_password'];
+            $pass = $data['password'];
             $verify_pass = password_verify($password, $pass);
             if ($verify_pass) {
                 $ses_data = [
-                    'user_id'       => $data['user_id'],
-                    'user_name'     => $data['user_name'],
-                    'user_email'    => $data['user_email'],
+                    'id_akun'       => $data['id_akun'],
+                    'nama'          => $data['nama'],
+                    'username'      => $data['username'],
+                    'foto'          => $data['foto'],
+                    'date'          => date("Y-d-m"),
+                    'time'          => date("H:i:s A"),
                     'logged_in'     => TRUE
                 ];
                 $session->set($ses_data);
                 return redirect()->to('/dashboard');
             } else {
                 $session->setFlashdata('msg', 'Wrong Password');
-                return redirect()->to('/login');
+                return redirect()->to('/');
             }
         } else {
-            $session->setFlashdata('msg', 'Email not Found');
-            return redirect()->to('/login');
+            $session->setFlashdata('msg', 'Username not Found');
+            return redirect()->to('/');
         }
     }
 
@@ -46,6 +49,6 @@ class Login extends Controller
     {
         $session = session();
         $session->destroy();
-        return redirect()->to('/login');
+        return redirect()->to('/');
     }
 }
